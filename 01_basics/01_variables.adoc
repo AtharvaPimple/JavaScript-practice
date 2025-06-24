@@ -112,6 +112,4 @@ function addItem(price) {
 
 Use `let` and `const` in modern JS. Reserve `var` only for legacy code.
 
-== Next Up
 
-Want notes on `Data Types`, `Functions`, or `Loops`? Just let me know and I’ll write the next module!
