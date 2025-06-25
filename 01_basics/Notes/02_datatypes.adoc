@@ -1,0 +1,171 @@
+= JavaScript Notes: Data Types
+Author: Atharva
+:toc: right
+:icons: font
+:source-highlighter: coderay
+
+== Introduction
+
+In JavaScript, every value belongs to a **data type** — a category that defines what kind of data it is and how you can use it. JS is a **dynamically typed language**, meaning you don’t have to specify the type — the interpreter figures it out.
+
+== Two Categories
+
+JavaScript has:
+- **Primitive Data Types**: Simple, immutable values.
+- **Reference (Non-Primitive) Types**: Objects, arrays, functions.
+
+== Primitive Types
+
+These are stored directly in the stack.
+
+=== 1. `String`
+
+Textual data enclosed in quotes.
+
+[source, javascript]
+----
+let name = "Alice";
+let message = 'Hello';
+----
+
+=== 2. `Number`
+
+All numbers (integers, floats) are of type `number`.
+
+[source, javascript]
+----
+let count = 42;
+let temperature = 36.6;
+----
+
+=== 3. `Boolean`
+
+Represents either `true` or `false`.
+
+[source, javascript]
+----
+let isActive = true;
+let isExpired = false;
+----
+
+=== 4. `Undefined`
+
+A variable that has been declared but not assigned a value.
+
+[source, javascript]
+----
+let result;
+console.log(result); // undefined
+----
+
+=== 5. `Null`
+
+Explicitly represents **no value**.
+
+[source, javascript]
+----
+let selectedItem = null;
+----
+
+=== 6. `Symbol` (ES6)
+
+A unique and immutable identifier, often used as object keys.
+
+[source, javascript]
+----
+let id = Symbol("userID");
+----
+
+=== 7. `BigInt` (ES11)
+
+Used for numbers larger than `2^53 - 1`.
+
+[source, javascript]
+----
+let big = 1234567890123456789012345n;
+----
+
+== Reference Types
+
+Stored in the heap and accessed by reference.
+
+=== 1. `Object`
+
+A collection of key-value pairs.
+
+[source, javascript]
+----
+let user = {
+    name: "Alex",
+    age: 30
+};
+----
+
+=== 2. `Array`
+
+An ordered list of values.
+
+[source, javascript]
+----
+let fruits = ["apple", "banana", "orange"];
+----
+
+=== 3. `Function`
+
+A block of code designed to do something.
+
+[source, javascript]
+----
+function greet() {
+    console.log("Hello!");
+}
+----
+
+== `typeof` Operator
+
+Use this to check the type of a value:
+
+[source, javascript]
+----
+typeof "hello"      // "string"
+typeof 42           // "number"
+typeof null         // "object" (quirky legacy bug)
+typeof undefined    // "undefined"
+typeof []           // "object"
+typeof function(){} // "function"
+----
+
+== Real-Life Analogy
+
+Imagine a school:
+
+- `String`: Student's name tag
+- `Number`: Their roll number
+- `Boolean`: Present or absent
+- `Object`: Entire student profile
+- `Array`: A list of students
+- `Function`: A process, like checking attendance
+- `Null`: An empty locker
+- `Undefined`: A locker assigned but still empty
+
+== Summary Table
+
+[cols="1,1,2", options="header"]
+|===
+| Category | Type | Example
+| Primitive | String | `"hello"`
+| Primitive | Number | `42`
+| Primitive | Boolean | `true`
+| Primitive | Undefined | `let x;`
+| Primitive | Null | `null`
+| Primitive | Symbol | `Symbol('id')`
+| Primitive | BigInt | `123456789n`
+| Reference | Object | `{ name: "Sam" }`
+| Reference | Array | `["red", "blue"]`
+| Reference | Function | `function() {}`
+|===
+
+== Final Tip
+
+Most confusion for beginners comes from understanding **`undefined` vs `null`** or spotting that `typeof null` returns `"object"` — which is a known JavaScript quirk!
+
